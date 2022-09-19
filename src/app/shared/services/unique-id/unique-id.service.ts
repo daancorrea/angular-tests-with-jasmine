@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 export class UniqueIdService {
 
   private numberOfGeneratedIds = 0;
-  private validId = /^[A-Za]+[\w\-\:\.]*$/;
+  private validId = /^[A-Za-z]+[\w\-\:\.]*$/;
 
   public generateUniqueIdWithPrefix(prefix: string): string {
     if (!prefix || !this.validId.test(prefix)) {
@@ -21,5 +21,4 @@ export class UniqueIdService {
   private generateUniqueId(): string {
     return uuidv4()
   }
-
 }
